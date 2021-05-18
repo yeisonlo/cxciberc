@@ -23,8 +23,9 @@
 		scriptElement.src = scriptAddress;
 		otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
 		})(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2489.azurewebsites.net/widget/main?v=1.0');
-		let id = new Date()
-		mw('create', 'uid', { uid: id + "-2489" }, {});
+		var d = new Date();
+		console.log(d.getTime());
+		mw('create', 'uid', { uid: d.getTime() + "-2489" }, {});
 
 		</script>	
 		<h1>ESTO ES UNA PRUEBA</h1>
