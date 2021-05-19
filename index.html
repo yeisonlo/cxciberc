@@ -7,35 +7,38 @@
 
 
 	<body>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
-		
-		function generate() {
-        var d = new Date().getTime();
-        var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = (d + Math.random() * 16) % 16 | 0;
-            d = Math.floor(d / 16);
-            return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-        });
-        return guid;
-		}
-
-		(function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
-		window['ChatLynn-Widget'] = globalName;
-		window[globalName] = window[globalName] || function () {
-		(window[globalName].q = window[globalName].q || []).push(arguments);
-		window[globalName].s = scriptAddress;
-		};
-
-		scriptElement = document.createElement(scriptTagName);
-		otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
-		scriptElement.async = 1;
-		scriptElement.src = scriptAddress;
-		otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
-		})(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2489.azurewebsites.net/widget/main');
-		mw('create', 'uid', { "uid": generate() },{ title: "Chat", showform: true, bottom: "5px", width: "320px" });
-
-		</script>	
+			function generate() {
+				var d = new Date().getTime();
+				var guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+					var r = (d + Math.random() * 16) % 16 | 0;
+					d = Math.floor(d / 16);
+					return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+				});
+				return guid;
+			}
+			var userData = {
+				uid: generate(),
+			   channelId: 20
+		   };
+			(function (window, document, scriptTagName, globalName, scriptAddress, scriptElement, otherScriptElement) {
+			   window['ChatLynn-Widget'] = globalName;
+				window[globalName] = window[globalName] || function () {
+					(window[globalName].q = window[globalName].q || []).push(arguments);
+					window[globalName].s = scriptAddress;
+				};
+	
+				scriptElement = document.createElement(scriptTagName);
+				otherScriptElement = document.getElementsByTagName(scriptTagName)[0];
+				scriptElement.async = 1;
+				scriptElement.src = scriptAddress;
+				otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
+			})(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2489.azurewebsites.net/js/widget/main.js');
+	
+			mw('create', 'uid', userData , {});
+	
+		</script>
+	
 		<h1>ESTO ES UNA PRUEBA</h1>
 	</body>
 </html>
