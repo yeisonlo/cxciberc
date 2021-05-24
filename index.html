@@ -35,8 +35,8 @@
 				otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
 			})(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2489.azurewebsites.net/js/widget/main.js');
 	
-			mw('create', 'uid', userData , {});
-	
+			//mw('create', 'uid', userData , {});
+			mw('create', 'uid', { "uid": generate() },{ title: "Chat", showform: true, bottom: "5px", width: "320px" });
 		</script>
 	
 		<h1>ESTO ES UNA PRUEBA</h1>
