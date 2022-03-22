@@ -23,8 +23,16 @@
     scriptElement.src = scriptAddress;
     otherScriptElement.parentNode.insertBefore(scriptElement, otherScriptElement);
     })(window, document, 'script', 'mw', 'https://lynn-latam-testing-br-ch-reg-t2489.azurewebsites.net/widget/main?v=1.0');
+	
+	function uuidv4() {
+	  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+		var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+		return v.toString(16);
+	  });
+	}
 
-    mw('create', 'uid', { uid: "63220-2489" }, {});
+
+    mw('create', 'uid', { uid: uuidv4() }, {});
 
     </script>
 	
